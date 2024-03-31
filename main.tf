@@ -1,4 +1,3 @@
-User
 terraform {
   required_providers {
     aws = {
@@ -116,9 +115,9 @@ resource "aws_cloudfront_distribution" "static-website-distribution" {
   }
 }
 
-resource "aws_waf_web_acl" "another-web-security-acl" {
-  name        = "new-web-security-acl"
-  metric_name = "new_web_security_acl_metric123"  # Corrigido para conter apenas caracteres alfanuméricos
+resource "aws_waf_web_acl" "web-security-acl" {
+  name        = "web-security-acl"
+  metric_name = "web_security_acl_metric"
 
   default_action {
     type = "ALLOW"
