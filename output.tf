@@ -1,26 +1,29 @@
 output "vpc_id" {
-  value = aws_vpc.main.id
+  description = "ID of the created VPC"
+  value       = aws_vpc.main.id
 }
 
-output "public_subnet_ids" {
-  value = [
-    aws_subnet.public_subnet_a.id,
-    aws_subnet.public_subnet_b.id
-  ]
+output "public_subnet_a_id" {
+  description = "ID of public subnet A"
+  value       = aws_subnet.public_subnet_a.id
 }
 
-output "load_balancer_dns_name" {
-  value = aws_elb.web-lb.dns_name
-}
-
-output "autoscaling_group_name" {
-  value = aws_autoscaling_group.data-processing-asg.name
-}
-
-output "nat_gateway_id" {
-  value = aws_nat_gateway.test-nat-gateway.id
+output "public_subnet_b_id" {
+  description = "ID of public subnet B"
+  value       = aws_subnet.public_subnet_b.id
 }
 
 output "s3_bucket_name" {
-  value = aws_s3_bucket.my-test-bucket.bucket
+  description = "Name of the S3 bucket"
+  value       = aws_s3_bucket.my-test-bucket.bucket
+}
+
+output "route53_zone_id" {
+  description = "ID of the Route 53 zone"
+  value       = aws_route53_zone.teste-exemplo-zone.zone_id
+}
+
+output "cloudfront_distribution_id" {
+  description = "ID of the CloudFront distribution"
+  value       = aws_cloudfront_distribution.static-website-distribution.id
 }
